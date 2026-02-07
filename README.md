@@ -57,10 +57,13 @@ Dataset download path：
 
 -Weight file download path:
 
--USFM：https://github.com/openmedlab/USFM
--MedSAM：https://huggingface.co/wanglab/medsam-vit-base
--RETFound：https://huggingface.co/RETFound/RETFound
--BiomedParse：https://huggingface.co/microsoft/BiomedParse
+USFM：https://github.com/openmedlab/USFM
+
+MedSAM：https://huggingface.co/wanglab/medsam-vit-base
+
+RETFound：https://huggingface.co/RETFound/RETFound
+
+BiomedParse：https://huggingface.co/microsoft/BiomedParse
 
 
 
