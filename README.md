@@ -19,10 +19,7 @@ A multi-teacher knowledge distillation framework for medical image segmentation,
 ### Upcoming Improvements
 - [ ] Unified code structure
 - [ ] Modular architecture redesign
-- [ ] Enhanced documentation
 - [ ] Code style standardization
-- [ ] Unit tests and CI/CD pipeline
-- [ ] Performance benchmark
 
 ---
 
