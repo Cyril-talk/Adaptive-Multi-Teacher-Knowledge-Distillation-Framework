@@ -49,17 +49,18 @@ This project implements a novel multi-teacher knowledge distillation framework f
 
 Dataset download path：
 - BUSI：https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset
-Kvasir-seg：https://datasets.simula.no/kvasir-seg/
-COVID：https://aistudio.baidu.com/datasetdetail/127908
-MSD-heart：https://aistudio.baidu.com/datasetdetail/23911
-APTOS2019：https://www.kaggle.com/datasets/mariaherrerot/aptos2019/data
-ISIC2017：https://aistudio.baidu.com/datasetdetail/65747
+- Kvasir-seg：https://datasets.simula.no/kvasir-seg/
+- COVID：https://aistudio.baidu.com/datasetdetail/127908
+- MSD-heart：https://aistudio.baidu.com/datasetdetail/23911
+- APTOS2019：https://www.kaggle.com/datasets/mariaherrerot/aptos2019/data
+- ISIC2017：https://aistudio.baidu.com/datasetdetail/65747
 
-Weight file download path:
-USFM：https://github.com/openmedlab/USFM
-MedSAM：https://huggingface.co/wanglab/medsam-vit-base
-RETFound：https://huggingface.co/RETFound/RETFound
-BiomedParse：https://huggingface.co/microsoft/BiomedParse
+-Weight file download path:
+
+-USFM：https://github.com/openmedlab/USFM
+-MedSAM：https://huggingface.co/wanglab/medsam-vit-base
+-RETFound：https://huggingface.co/RETFound/RETFound
+-BiomedParse：https://huggingface.co/microsoft/BiomedParse
 
 
 
