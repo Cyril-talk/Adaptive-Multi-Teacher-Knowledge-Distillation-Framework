@@ -1,0 +1,210 @@
+
+defaults:
+
+  num_epochs: 100
+  batch_size: 8
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  gradient_clip: 1.0
+
+
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 5
+  min_lr: 0.000001
+
+
+  device: cuda
+  num_workers: 4
+  pin_memory: true
+  save_best_only: true
+  save_frequency: 5
+  log_frequency: 10
+  verbose: true
+
+
+datasets:
+
+
+  BUSI:
+
+    dataset_name: BUSI
+    task_type: segmentation
+    num_classes: 1
+    task_id: 0
+
+
+    data_root: ./data/BUSI
+    train_image_dir: ./data/BUSI/images
+    train_mask_dir: ./data/BUSI/masks
+    val_split: 0.2
+    test_split: 0.1
+
+
+    image_size: [256, 256]
+    input_channels: 3
+
+
+    output_dir: ./outputs/BUSI
+    checkpoint_dir: ./outputs/BUSI/checkpoints
+    log_dir: ./outputs/BUSI/logs
+
+
+  Kvasir-SEG:
+
+    dataset_name: Kvasir-SEG
+    task_type: segmentation
+    num_classes: 1
+    task_id: 0
+
+
+    data_root: ./data/Kvasir-SEG
+    train_image_dir: ./data/Kvasir-SEG/images
+    train_mask_dir: ./data/Kvasir-SEG/masks
+    val_split: 0.2
+    test_split: 0.1
+
+
+    image_size: [352, 352]
+    input_channels: 3
+
+
+    output_dir: ./outputs/Kvasir-SEG
+    checkpoint_dir: ./outputs/Kvasir-SEG/checkpoints
+    log_dir: ./outputs/Kvasir-SEG/logs
+
+
+  COVID:
+
+    dataset_name: COVID
+    task_type: segmentation
+    num_classes: 1
+    task_id: 0
+
+
+    data_root: ./data/COVID
+    train_image_dir: ./data/COVID/images
+    train_mask_dir: ./data/COVID/masks
+    val_split: 0.2
+    test_split: 0.1
+
+
+    image_size: [512, 512]
+    input_channels: 3
+
+
+    output_dir: ./outputs/COVID
+    checkpoint_dir: ./outputs/COVID/checkpoints
+    log_dir: ./outputs/COVID/logs
+
+
+  MSD-Heart:
+
+    dataset_name: MSD-Heart
+    task_type: segmentation
+    num_classes: 1
+    task_id: 0
+
+
+    data_root: ./data/MSD-Heart
+    train_image_dir: ./data/MSD-Heart/imagesTr
+    train_mask_dir: ./data/MSD-Heart/labelsTr
+    test_image_dir: ./data/MSD-Heart/imagesTs
+    val_split: 0.2
+
+
+    image_size: [256, 256]
+    input_channels: 3
+
+
+    output_dir: ./outputs/MSD-Heart
+    checkpoint_dir: ./outputs/MSD-Heart/checkpoints
+    log_dir: ./outputs/MSD-Heart/logs
+
+
+  APTOS2019:
+    # 数据集信息
+    dataset_name: APTOS2019
+    task_type: classification
+    num_classes: 5
+    task_id: 1
+
+
+    data_root: ./data/APTOS2019
+    train_image_dir: ./data/APTOS2019/train_images
+    train_csv: ./data/APTOS2019/train.csv
+    test_image_dir: ./data/APTOS2019/test_images
+    test_csv: ./data/APTOS2019/test.csv
+    val_split: 0.2
+
+
+    image_size: [512, 512]
+    input_channels: 3
+
+
+    class_names:
+      - No DR
+      - Mild
+      - Moderate
+      - Severe
+      - Proliferative DR
+
+    # 输出路径
+    output_dir: ./outputs/APTOS2019
+    checkpoint_dir: ./outputs/APTOS2019/checkpoints
+    log_dir: ./outputs/APTOS2019/logs
+
+
+  ISIC2017:
+
+    dataset_name: ISIC2017
+    task_type: recognition
+    num_classes: 3
+    task_id: 2
+
+
+    data_root: ./data/ISIC2017
+    train_image_dir: ./data/ISIC2017/ISIC-2017_Training_Data
+    train_csv: ./data/ISIC2017/ISIC-2017_Training_Part3_GroundTruth.csv
+    val_image_dir: ./data/ISIC2017/ISIC-2017_Validation_Data
+    val_csv: ./data/ISIC2017/ISIC-2017_Validation_Part3_GroundTruth.csv
+    test_image_dir: ./data/ISIC2017/ISIC-2017_Test_v2_Data
+    test_csv: ./data/ISIC2017/ISIC-2017_Test_v2_Part3_GroundTruth.csv
+
+
+    image_size: [224, 224]
+    input_channels: 3
+
+    # 类别名称
+    class_names:
+      - Melanoma
+      - Seborrheic Keratosis
+      - Benign Nevus
+
+    # 输出路径
+    output_dir: ./outputs/ISIC2017
+    checkpoint_dir: ./outputs/ISIC2017/checkpoints
+    log_dir: ./outputs/ISIC2017/logs
+
+
+task_mapping:
+
+  0:
+    name: Medical Image Segmentation
+    datasets:
+      - BUSI
+      - Kvasir-SEG
+      - COVID
+      - MSD-Heart
+
+
+  1:
+    name: Retinal Disease Classification
+    datasets:
+      - APTOS2019
+
+
+  2:
+    name: Skin Lesion Recognition
+    datasets:
+      - ISIC2017

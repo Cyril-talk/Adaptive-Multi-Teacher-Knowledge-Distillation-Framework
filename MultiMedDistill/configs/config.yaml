@@ -1,0 +1,54 @@
+# 基础配置
+seed: 42
+device: cuda
+
+# 模型配置
+backbone: efficientnet_b0
+feat_dim: 1280
+
+# 任务配置
+segmentation_tasks:
+  busi:
+    type: binary
+    classes: 2
+  kvasir:
+    type: binary
+    classes: 2
+
+classification_tasks:
+  aptos:
+    classes: 5
+
+recognition_tasks:
+  isic:
+    classes: 7
+
+# 训练配置
+batch_size: 32
+num_epochs: 100
+learning_rate: 0.001
+weight_decay: 0.0001
+warmup_epochs: 5
+
+# 混合精度和梯度累积
+use_amp: true
+gradient_accumulation_steps: 1
+
+# 早停
+early_stopping_patience: 10
+
+
+
+# CRD 配置
+crd_temperature: 0.07
+crd_momentum: 0.5
+memory_bank_size: 16384
+
+# 路径配置
+data_root: ./data
+checkpoint_dir: ./checkpoints
+log_dir: ./logs
+vis_dir: ./visualizations
+
+# 实验追踪
+use_wandb: false
